@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import contactRoutes from './routes/contactRoutes.js';
 import aiRoutes from './routes/aiRoutes.js';
+import analysisRoutes from './routes/analysisRoutes.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 dotenv.config();
@@ -20,6 +21,7 @@ app.use(express.json());
 // Routes
 app.use('/api/contacts', contactRoutes);
 app.use('/api/chat', aiRoutes);
+app.use('/api/analysis', analysisRoutes);
 
 // Error Handler
 app.use(errorHandler);

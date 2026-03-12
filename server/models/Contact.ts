@@ -28,6 +28,9 @@ const ContactSchema: Schema = new Schema({
   id: false
 });
 
+// Regular indexes for aggregation performance (sorting and grouping)
+ContactSchema.index({ role: 1 });
+
 // Create text indexes on structured data and specific arbitrary fields if needed
 // This supports the core search requirement for AI retrieval
 ContactSchema.index({ name: 'text', company: 'text', role: 'text', email: 'text' });
